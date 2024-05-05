@@ -24,7 +24,7 @@ export default function App() {
             <ItemCard key={item.id} item={item} url={item.url} name={item.name} price={item.price} cartItems={cartItems} setCartItems={setCartItems} />
           ))}
         </div>
-        <Cart data={cartItems}/>
+        <Cart data={cartItems} setCartItems={setCartItems}/>
       </div>
     </div>
   );
