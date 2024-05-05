@@ -50,7 +50,7 @@
     align-items: flex-start;
 }
 
-.navbar a {
+.clickable {
     cursor: pointer;
 }
 
@@ -141,7 +141,6 @@
 .price {
     margin-left: auto;
     font-weight: bold;
-    max-width: 70px;
 }
 
 .quantity {

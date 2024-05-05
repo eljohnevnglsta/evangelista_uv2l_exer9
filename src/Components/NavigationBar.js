@@ -13,12 +13,12 @@ export default function NavigationBar(props){
     return(
         <div className='navbar'> 
             <div className='navbuttons' id='siteName'>
-                <a href = "#" onClick={() => handleCategoryClick('all')}>Lazado</a>
+                <div className="clickable" onClick={() => handleCategoryClick('all')}>Lazado</div>
             </div>
             <div className='tabs'>
                 {categories.map(category => (
                     <div key={category.id}>
-                        <a href = "#" id={category.id} onClick={() => handleCategoryClick(category.name)}>{category.name}</a>
+                        <div className="clickable" id={category.id} onClick={() => handleCategoryClick(category.name)}>{category.name}</div>
                     </div>
                 ))}
             </div>
