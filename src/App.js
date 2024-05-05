@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import NavigationBar from './Components/NavigationBar';
 import ItemCard from './Components/ItemCard';
+import Cart from './Components/Cart';
 
 export default function App() {
   const [selectedCategory, setSelectedCategory] = useState(null);  //state changer for the tab selection
@@ -16,10 +17,15 @@ export default function App() {
   return ( //main app
     <div id="root"> 
       <NavigationBar data={menus} onCategoryClick={handleCategoryClick} selectedCategory={selectedCategory}/>
-      <div className='cardsHolder'>
-        {filteredItems.map(item => (
-          <ItemCard key={item.id} name={item.name} url={item.url} category={item.category} cart={cartItems} price={item.price}/>
-        ))}
+      <div className='body'>
+        <div className='cardsHolder'>
+          {filteredItems.map(item => (
+            <ItemCard key={item.id} name={item.name} url={item.url} category={item.category} cart={cartItems} price={item.price}/>
+          ))}
+        </div>
+        <div className="cartHolder">
+          <Cart data={cartItems.length}/>
+        </div>
       </div>
     </div>
   );

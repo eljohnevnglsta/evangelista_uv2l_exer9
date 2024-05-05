@@ -1,3 +1,12 @@
+* {
+    border: 1px solid red;
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+}
+
 .navbar {
     display: flex;
     flex-direction: column;
@@ -32,6 +41,30 @@
 #siteName {
     justify-content: center;
     margin: auto;
+}
+
+.body {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.cartHolder {
+    background-color: orange;
+    border-radius: 10px;
+    margin-top: 160px;
+    min-width: 300px;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column ;
+    justify-content: center;
+}
+
+.totalItems {
+    font-family: "Poppins", sans-serif;
+    font-weight: 800;
+    margin: auto;
+    margin-top: 20px;
 }
 
 .navbar a {
@@ -71,3 +104,4 @@
     font-family: "Poppins", sans-serif;
     border-radius: 10px;
 }
+
