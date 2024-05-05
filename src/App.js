@@ -5,6 +5,7 @@ import Cart from './Components/Cart';
 
 export default function App() {
   const [selectedCategory, setSelectedCategory] = useState(null);  //state changer for the tab selection
+  const [cartItems, setCartItems] = useState([]);
 
   const handleCategoryClick = (categoryId) => {
     setSelectedCategory(categoryId === 'all' ? null : categoryId);  //identifies which tab is selected, defaulted to null or all
@@ -20,12 +21,10 @@ export default function App() {
       <div className='body'>
         <div className='cardsHolder'>
           {filteredItems.map(item => (
-            <ItemCard key={item.id} name={item.name} url={item.url} category={item.category} cart={cartItems} price={item.price}/>
+            <ItemCard key={item.id} item={item} url={item.url} name={item.name} price={item.price} cartItems={cartItems} setCartItems={setCartItems} />
           ))}
         </div>
-        <div className="cartHolder">
-          <Cart data={cartItems.length}/>
-        </div>
+        <Cart data={cartItems}/>
       </div>
     </div>
   );
@@ -40,7 +39,7 @@ const menus = [
 ];
 
 //cart items array
-var cartItems = [];
+
 
 //array of objects
 const items = [
